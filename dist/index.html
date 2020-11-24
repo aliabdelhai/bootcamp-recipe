@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>recipe app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav-wrapper">
+        <div class="left-side">
+            <div class="nav-link-wrapper">
+            </div>
+            <div class="nav-link-wrapper">
+                <div class='games'>all recipes</div>
+            </div>
+            <div class="nav-link-wrapper">
+                <div class='schedule'>about us</div>
+            </div>
+            <div class="nav-link-wrapper">
+                <div class='news'>explore</div>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="brand">
+                login
+            </div>
+            <div class="brand">
+                get all recipes magazine
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class='input'>
+        <input class='my-input' placeholder="Search By Ingredient" type="text">
+        <button class='search'>SEARCH!</button>
+    </div>   
+    
+    <div class = 'recipes'></div>
+
+    <script id="store-template" type="text/x-handlebars-template">
+        {{#each data}}
+            <div class = 'recipe'>
+                <a href="{{href}}" class='recipeTitle' target="_blank" onerror='errorVideo(this)'>{{title}}</a>
+                <img class='recipeImg' src="{{thumbnail}}" onerror='errorImg(this)'>
+                <div id='ingr'>Ingredients:</div>
+                <ul class = 'ingredients'>
+                    {{#each ingredients}}
+                        <li>{{this}}</li>
+                    {{/each}}    
+                </ul>
+            </div>
+        {{/each}}    
+    </script>
+    
+
+  
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
+    
+</body>
+</html>
